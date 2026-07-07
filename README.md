@@ -48,6 +48,13 @@ Assistente corporativo com IA desenvolvido como projeto final da disciplina "IA 
 - Acesse: **SQL Editor**
 - Execute o arquivo `supabase/schema.sql` disponível neste repositório
 
+O schema cria:
+- Tabela `documents` — armazena nome e conteúdo dos PDFs enviados
+- Tabela `document_chunks` — armazena os chunks de texto com embeddings vetoriais (768 dimensões)
+- Tabela `messages` — armazena o histórico de conversa por sessão
+- Índice HNSW na coluna `embedding` para busca semântica eficiente
+- Função `match_chunks` — busca os chunks mais relevantes por similaridade de cosseno
+
 ### 4. Copie as credenciais
 - Acesse: **Settings → API → Legacy anon, service_role API keys**
 - Copie a **Project URL** e a chave **anon public**
@@ -61,7 +68,7 @@ Assistente corporativo com IA desenvolvido como projeto final da disciplina "IA 
 ## Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/corpbot.git
+git clone https://github.com/Nickshout/corpbot.git
 cd corpbot
 npm install
 cp .env.local.example .env.local
@@ -109,13 +116,19 @@ corpbot/
 │   └── schema.sql              # Schema com pgvector
 └── .env.local.example
 
-## Deploy
+## Deploy na Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+1. Acesse [vercel.com](https://vercel.com) e faça login com sua conta GitHub
+2. Clique em **Add New → Project**
+3. Importe o repositório `Nickshout/corpbot`
+4. Em **Environment Variables**, adicione as 4 variáveis:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `GEMINI_API_KEY`
+   - `NEXT_PUBLIC_APP_NAME` = `CorpBot`
+5. Clique em **Deploy**
 
-1. Importe o repositório na Vercel
-2. Adicione as variáveis de ambiente no painel do projeto
-3. Faça deploy
+> A URL pública será gerada automaticamente pela Vercel após o deploy.
 
 ## Prints
 

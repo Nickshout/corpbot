@@ -12,7 +12,7 @@ create table if not exists document_chunks (
   id uuid primary key default gen_random_uuid(),
   document_id uuid not null references documents(id) on delete cascade,
   content text not null,
-  embedding vector(3072) not null,
+  embedding vector(768) not null,
   chunk_index integer not null,
   created_at timestamp with time zone default now()
 );
@@ -29,7 +29,7 @@ create index if not exists document_chunks_embedding_hnsw_idx
   on document_chunks
   using hnsw (embedding vector_cosine_ops);
 
-create or replace function match_chunks(query_embedding vector(3072), match_count int default 5)
+create or replace function match_chunks(query_embedding vector(768), match_count int default 5)
 returns table (
   id uuid,
   document_id uuid,
