@@ -128,6 +128,8 @@ corpbot/
    - `NEXT_PUBLIC_APP_NAME` = `CorpBot`
 5. Clique em **Deploy**
 
+**URL em produção: https://corpbot.vercel.app**
+
 > A URL pública será gerada automaticamente pela Vercel após o deploy.
 
 ## Prints
