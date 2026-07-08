@@ -134,7 +134,26 @@ corpbot/
 
 ## Prints
 
-<!-- Adicione prints da aplicação após o deploy -->
+### 1. Tela inicial
+![Tela inicial](screenshots/01-home.png)
+
+### 2. Seleção do documento PDF
+![Seleção do documento PDF](screenshots/02_selecao_do_documento_pdf.png)
+
+### 3. Upload do documento
+![Upload do documento](screenshots/03_upload_do_documento.png)
+
+### 4. Documento indexado
+![Documento indexado](screenshots/04_documento_indexado.png)
+
+### 5. Consulta em linguagem formal
+![Consulta em linguagem formal](screenshots/05_consulta_em_linguagem_formal.png)
+
+### 6. Consulta em linguagem natural
+![Consulta em linguagem natural](screenshots/06_consulta_em_linguagem_natural.png)
+
+### 7. Informação não disponível na base
+![Informação não disponível na base](screenshots/07_informacao_nao_disponivel_na_base.png)
 
 ## Licença
 
